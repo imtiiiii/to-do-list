@@ -11,34 +11,7 @@ export default class AuthService {
     }
     
     public async register(ctx){
-      let data = ctx.request.all();
-      let number = Math.floor(Math.random() * 899999 + 100000)
-      delete data.agree
-      delete data.password_confirmation
-      let username = data.first_name +'_'+ data.last_name
-      let totalUsers : any[] = await this.authQuery.searchUsername(username)
-      let numberOfUsers : number = totalUsers[0].total
-      let newCount = numberOfUsers > 0 ? ++numberOfUsers : ''
-      username = newCount > 0 ? `${username}_${newCount}` : username
-      data.username = username
-      data.forgot_code= number,
-      data.is_banned='unverified'
-      
-      let user :any = await this.authQuery.register(data)
-      if(user){
-        let obj ={
-          username: user?.first_name +' '+user?.last_name,
-          token:user?.forgot_code
-        }
-        await Mail.send((message) => {
-          message
-              .from('noreply@scrapabill.com', 'Social-Network')
-              .to(user.email)
-              .subject('Please confirm your email address')
-              .htmlView('emails.verification_emai',  obj)
-        })
-      }
-      return ctx.response.status(200).send({ msg: 'Account created successfully!' })
+      console.log(ctx.request.all());
       
     }
     public async sendResetToken(ctx,data){

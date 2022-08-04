@@ -6,8 +6,8 @@
                     <div class="col">
                         <router-link to="/">
                             <h3 class="_menu_logo_text">
-                                <span class="_menu_logo_symbol">C</span>
-                                <span class="_menu_logo_text_main">CONNECTIVER</span>
+                                <span class="_menu_logo_symbol">T</span>
+                                <span class="_menu_logo_text_main">TO-DO</span>
                             </h3>
                         </router-link>
                     </div>
@@ -24,8 +24,8 @@
         <!-- Banner -->
         <div class="_4banner">
             <div class="_4banner_main">
-                <h1 class="_4banner_title">Connectiver</h1>
-                <p class="_4banner_text">Creating a conscious and safe community where human<br/> connection and new ideas can thrive</p>
+                <h1 class="_4banner_title">TO-DO APP</h1>
+                <p class="_4banner_text">Arrange your works like never before</p>
             </div>
         </div>
         <!-- Banner -->

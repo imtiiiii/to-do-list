@@ -7,12 +7,11 @@ export default class AuthValidator{
         email: schema.string({}, [
           rules.email({
             sanitize: true,
-            ignoreMaxLength: false,
-            //domainSpecificValidation: true,
+            
           }),
           rules.unique({ table: 'users', column: 'email' }),
         ]),
-        first_name : schema.string({
+        name : schema.string({
           escape: true,
           trim: true
         }),
@@ -20,14 +19,14 @@ export default class AuthValidator{
           escape: true,
           trim: true
         }),
-        gender : schema.string({
+        address : schema.string({
           escape: true,
           trim: true
         }),
         password: schema.string({escape: true,
           trim: true}, [
             rules.minLength(6),
-            rules.confirmed()
+            
         ]),
 
 
@@ -36,14 +35,12 @@ export default class AuthValidator{
         'email.required': 'Email is required',
         'email.unique': 'Email is already in use',
         'email.email': 'Invalid email address',
-        'first_name.required': 'Firstname is required',
-        'last_name.required': 'Lastname is required',
+        'name.required': 'Name is required',
         'password.required': 'Password is required',
-        'password.minLength': 'Password must be at least 6 charecters long',
-        'password_confirmation.confirmed': "Password and confirm password doesn't match",
-        'gender.required': "Gender is required",
+        'password.minLength': 'Password must be at least 6 charecters long', 
+        'address.required': "Address is required",
       }
-      //return await ctx.request.validate({ schema: userSchema, messages : msg })
+      
       try {
         const payload = await ctx.request.validate({ schema: userSchema, messages : msg })
         return payload

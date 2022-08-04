@@ -19,7 +19,7 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-
+import 'App/Controllers/Http/Auth/auth'
 import 'App/Controllers/Http/Auth/auth'
 
 Route.get('/', ()=>{
