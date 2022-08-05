@@ -15,10 +15,6 @@ export default class AuthValidator{
           escape: true,
           trim: true
         }),
-        last_name : schema.string({
-          escape: true,
-          trim: true
-        }),
         address : schema.string({
           escape: true,
           trim: true

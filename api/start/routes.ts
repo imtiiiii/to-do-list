@@ -21,7 +21,10 @@
 import Route from '@ioc:Adonis/Core/Route'
 import 'App/Controllers/Http/Auth/auth'
 import 'App/Controllers/Http/Auth/auth'
+import TasksController from '../app/Controllers/Http/TasksController';
+
 
 Route.get('/', ()=>{
   return{message:'You have landed in empty ocean!'}
 })
+Route.post('/create-task',"TasksController.createTask");
